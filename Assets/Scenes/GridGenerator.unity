@@ -406,13 +406,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbe3e69ae8e450b821d70157faac84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridXValue: 200
-  _gridYValue: 200
+  _gridXValue: 64
+  _gridYValue: 64
   _cellSize: 1
   _startPosition: {x: 0, y: 0, z: 0}
-  _generationMethod: {fileID: 11400000, guid: 7a1492b2bb9be38428ed12a7498d218c, type: 2}
+  _generationMethod: {fileID: 11400000, guid: 740ce95b0d71b9540a39781cd29c28f4, type: 2}
   _drawDebug: 0
-  _seed: 1234
+  _seed: 2564
   _stepDelay: 100
 --- !u!4 &1922166660
 Transform:
