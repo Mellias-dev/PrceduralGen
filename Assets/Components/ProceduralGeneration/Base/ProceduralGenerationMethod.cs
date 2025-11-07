@@ -14,7 +14,7 @@ namespace Components.ProceduralGeneration
         [SerializeField] protected int _maxSteps = 1000;
 
         // Injected at runtime, not serialized
-        [NonSerialized] protected ProceduralGridGenerator GridGenerator;
+        [NonSerialized] public ProceduralGridGenerator GridGenerator;
         [NonSerialized] protected RandomService RandomService;
         [NonSerialized] private CancellationTokenSource _cancellationTokenSource;
 

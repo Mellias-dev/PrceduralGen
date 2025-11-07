@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b89b16080b4f1054582114e31d23dc31, type: 3}
-  m_Name: New Noise
+  m_Name: Lagune
   m_EditorClassIdentifier: 
   _maxSteps: 1000
   _noiseType: 0
