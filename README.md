@@ -143,7 +143,9 @@ Every time we place a room we add it to a list then we sort this list by there X
 
 ### The Results
 
-This method is a bit more complex since it uses recursivity. It basicly devides the grid in zones to ensure that the rooms can't overlap and then we place 1 room in each zone before linking them with corridors. Since the zones are created by pairs we can easily link the pairs to create corridors, this is the great strength of BSP compared to Simple Room Placement.
+This method is a bit more complex since it uses recursivity. It basicly devides the grid in zones to ensure that the rooms can't overlap and then we place 1 room in each zone before linking them with corridors. 
+
+Since the zones are created by pairs we can easily link the pairs to create corridors, this is the great strength of BSP compared to Simple Room Placement.
 
 Here are the results :
 
@@ -171,7 +173,9 @@ To do that we recurcively create nodes (a new class):
         Split();
     }
 
-Here every time we create a Node we call Split wich potentially call the creation of 2 Nodes and each of them call the Split function. You can see the possible chain reaction. We have to be carefull of infinite loops so we put conditions in Split() : 
+Here every time we create a Node we call Split wich potentially call the creation of 2 Nodes and each of them call the Split function. 
+
+You can see the possible chain reaction. We have to be carefull of infinite loops so we put conditions in Split() : 
 
       private void Split()
       {
@@ -221,7 +225,9 @@ Here every time we create a Node we call Split wich potentially call the creatio
 
 This Split function makes 2 Nodes if the parent Node can be split horizontaly or verticaly. If not then we have reach a node sufficiently small and we place a room in it.
 
-Given that Nodes are created by pairs that we call sisters and that the only nodes that give rooms don't have children because they couldn't split, we just have to connect sisters that don't have children to form corridors. Here comes the fonction ConnectSisters in wich we recursively search for these nodes and we create corridors between them :
+Given that Nodes are created by pairs that we call sisters and that the only nodes that give rooms don't have children because they couldn't split, we just have to connect sisters that don't have children to form corridors.
+
+Here comes the fonction ConnectSisters in wich we recursively search for these nodes and we create corridors between them :
 
     public void ConnectSisters()
     {
@@ -374,11 +380,14 @@ here we make the extra step to make an array of bool in wich each bool represent
         }
     }
 
-In order to appreciate how this generation method works and its educationnal aspect, we render each step and we keep checking neighboors in the grid of cells, therefor calling each time demanding methods such as TryGetCellByCoordinates or AddGridObjectToCell. For the sake of performances we could be checking neighboors on the array of booleans and only render the final step.
+In order to appreciate how this generation method works and its educationnal aspect, we render each step and we keep checking neighboors in the grid of cells, therefor calling each time demanding methods such as TryGetCellByCoordinates or AddGridObjectToCell.
+
+For the sake of performances we could be checking neighboors on the array of booleans and only render the final step.
+
 ## 5. The Noise Based generation
 
 ### The Results
-Here we generate a map based on a noise (generated with FastNoiseLight). Basically we generate a noise (like a lengthwave between -1 and 1) and we check the height of the noise in every cell, this height will dictate what type of GameObject we will place in the cell (water, sand,grass or rock).
+Here we generate a map based on a noise (generated with FastNoiseLight). Basically we generate a noise (like a lengthwave between -1 and 1) and we check the height of the noise in every cell, this height will dictate what type of GameObject we will place in the cell (water, sand, grass or rock).
 
 This method gives birth to beautifull maps and we can tweak the parameters to make different biomes, there i made what looks like lagoons :
 
@@ -386,7 +395,9 @@ This method gives birth to beautifull maps and we can tweak the parameters to ma
 
 ### The logic
 
-All we do here is just generating a noise the dimensions of the grid thanks to the FastNoiseLight Library. Then we make an array of float values that stocks the height of the noise for X and Y coordinates and we go through this array attaching a different GameObject to the cell with the given X and Y coordinates according to different ranges of values in the function FromNoiseToMap :
+All we do here is just generating a noise the dimensions of the grid thanks to the FastNoiseLight Library.
+
+Then we make an array of float values that stocks the height of the noise for X and Y coordinates and we go through this array attaching a different GameObject to the cell with the given X and Y coordinates according to different ranges of values in the function FromNoiseToMap :
 
           private void FromNoiseToMap(float[,] noise)
           {
