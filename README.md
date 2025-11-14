@@ -15,15 +15,17 @@ there are systems to generate the grid in order to visualize your procedural gen
 The Grid is composed of Cells that can hold a GameObject (or not). You can check if a cell has a GameObject and access it with different methods. 
 If you want to modify GameObject in cells, you would usually do this :
 
- if (!Grid.TryGetCellByCoordinates(x, y, out var chosenCell))
- {
-     Debug.LogError($"Unable to get cell on coordinates : ({x}, {y})");
-     continue;
- }
- else
- {
- AddTileToCell(chosenCell,"Water",true);
- }
+
+            if (!Grid.TryGetCellByCoordinates(x, y, out var chosenCell))
+            {
+                Debug.LogError($"Unable to get cell on coordinates : ({x}, {y})");
+                continue;
+            }
+            else
+            {
+            AddTileToCell(chosenCell,"Water",true);
+            }
+
 
 Here the parameter "Water" is linked to a GridObjectTemplate that you can create yourself in the editor by rightClicking=>Create=>Grid=>GameObjectTemplate and by adding a view in it.
 
