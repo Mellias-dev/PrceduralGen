@@ -29,9 +29,34 @@ If you want to modify GameObject in cells, you would usually do this :
 
 Here the parameter "Water" is linked to a GridObjectTemplate that you can create yourself in the editor by rightClicking=>Create=>Grid=>GameObjectTemplate and by adding a view in it.
 
+<img width="825" height="670" alt="image" src="https://github.com/user-attachments/assets/efc990f0-b179-4406-9bb1-bf3e4b6cc204" />
+
+The view is just a prefab with an empty GameObject with the component GridObjectController and a its sprite as its enfant.
+
+<img width="528" height="222" alt="image" src="https://github.com/user-attachments/assets/caacfd27-6763-408a-a915-0c62ef67473d" />
+
+You can find the exemples in the Component folder. 
 ### The RandomService
+It is used to do all the randomised things but it is based on a seed so that there is repeatability to your experimentation with procedural generation.
+
+Note that every change in the code can induce a change in your results even without changing the seed.
+
+The seed is directly accessible in the editor in the ProceduralGridGenerator so you can change it and have fun.
 ### The ProceduralGridGenerator
-### The ProceduralGridMethod
+
+It is used to generate a grid based on a ProceduralGenerationMethod.
+
+You can switch ProceduralGenerationMethod directly in the editor by sliding a new one right there.
+
+<img width="1152" height="648" alt="generation method" src="https://github.com/user-attachments/assets/7d567ad4-eddb-45d8-a3a2-83c4fe6f0ee5" />
+
+### The ProceduralGenerationMethod
+It defines a method of procedural generation used by the ProceduralGridGenerator.
+
+There are actually 4 (use BSP2 not BSP if you want BSP) that you can already create by rightClicking=>Create=>Procedural Generation Method=>
+
+<img width="822" height="698" alt="image" src="https://github.com/user-attachments/assets/6e66859f-d016-40ac-91dc-0163284e9405" />
+
 ## 2. The Simple Room Placement
 ## 3. The Binary Space Partition (BSP)
 ## 4. The Cellular Automata
