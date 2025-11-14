@@ -57,7 +57,26 @@ There are actually 4 (use BSP2 not BSP if you want BSP) that you can already cre
 
 <img width="822" height="698" alt="image" src="https://github.com/user-attachments/assets/6e66859f-d016-40ac-91dc-0163284e9405" />
 
+You can make your own ProceduralgenerationMethod, all you need to do is creating a new script and add the elements according to this code snippet:
+
+              using UnityEngine;
+              using Components.ProceduralGeneration;
+              using Cysharp.Threading.Tasks;
+              using System.Threading;
+
+              [CreateAssetMenu(menuName = "Procedural Generation Method/OtherGenerationmethod")]
+              
+              public class OtherGenerationMethod : ProceduralGenerationMethod
+              {
+                  protected override UniTask ApplyGeneration(CancellationToken cancellationToken)
+                  {
+                      throw new System.NotImplementedException();
+                  }
+              }
+
+note that you need UniTask.
 ## 2. The Simple Room Placement
+
 ## 3. The Binary Space Partition (BSP)
 ## 4. The Cellular Automata
 ## 5. The Noise Based generation
