@@ -219,7 +219,7 @@ Here every time we create a Node we call Split wich potentially call the creatio
           _bsp2.Tree.Add(_child2);
       }
 
-This Split function makes 2 Nodes if the parent Node can be split horizontaly or verticaly. If not then then we have reach a node sufficiently small and we place a room in it.
+This Split function makes 2 Nodes if the parent Node can be split horizontaly or verticaly. If not then we have reach a node sufficiently small and we place a room in it.
 
 Given that Nodes are created by pairs that we call sisters and that the only nodes that give rooms don't have children because they couldn't split, we just have to connect sisters that don't have children to form corridors. Here comes the fonction ConnectSisters in wich we recursively search for these nodes and we create corridors between them :
 
@@ -386,7 +386,7 @@ This method gives birth to beautifull maps and we can tweak the parameters to ma
 
 ### The logic
 
-All we do here is just generating a noise the dimensions of the grid thanks to the FastNoiseLight Library. Then we make an array of float values that stocks the height of the noise for X and Y coordinates and we go through this array attaching a different GameObject to the cell with the given X and Y coordinates according to different range of values in the function FromNoiseToMap :
+All we do here is just generating a noise the dimensions of the grid thanks to the FastNoiseLight Library. Then we make an array of float values that stocks the height of the noise for X and Y coordinates and we go through this array attaching a different GameObject to the cell with the given X and Y coordinates according to different ranges of values in the function FromNoiseToMap :
 
           private void FromNoiseToMap(float[,] noise)
           {
@@ -420,9 +420,10 @@ All we do here is just generating a noise the dimensions of the grid thanks to t
               }
           }
 
-Changing the range of values is possible directly in the editor and influence the type of landscape the generation will produce. Explore and have Fun !
+Changing the ranges of values is possible directly in the editor and influence the type of landscape the generation will produce. Explore and have Fun !
 
 ## Special Thanks
 
 Special thanks to those who worked on FastNoiseLight (https://github.com/Auburn/FastNoiseLite).
+
 Special thanks to Yona Rutkowski, this repo comes from his transmission of knowledge!
